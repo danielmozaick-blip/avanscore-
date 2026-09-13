@@ -2071,3 +2071,14 @@ select:focus-visible {
     font-size: 20px !important;
     font-weight: 700 !important;
 }
+/* =========================================================
+   LIEN ADMIN CACHÉ PAR DÉFAUT
+   ========================================================= */
+
+a[href="admin.html"] {
+    display: none !important;
+}
+
+body.admin-authenticated a[href="admin.html"] {
+    display: flex !important;
+}
