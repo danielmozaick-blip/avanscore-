@@ -8,35 +8,24 @@ const ADMIN_UID = "1hZUciu6kAdyzdFoQNeLkfXVCFt1";
 
 auth.onAuthStateChanged(function(user) {
 
-    if (user) {
+    if (user && user.uid === ADMIN_UID) {
 
-        if (user.uid === ADMIN_UID) {
+        console.log("Administrateur authentifié :", user.email);
 
-            console.log("Administrateur authentifié :", user.email);
+        document.body.classList.add("admin-authenticated");
 
-            document.body.classList.add("admin-authenticated");
-
-            if (window.location.pathname.includes("admin.html")) {
-                document.body.classList.add("admin-access-granted");
-            }
-
-        } else {
-
-            console.log("Utilisateur connecté :", user.email);
-
-            if (window.location.pathname.includes("admin.html")) {
-                alert("Accès refusé. Vous n'êtes pas l'administrateur.");
-                window.location.href = "index.html";
-            }
+        var lienAdmin = document.getElementById("lienAdmin");
+        if (lienAdmin) {
+            lienAdmin.style.display = "flex";
         }
 
     } else {
 
-        console.log("Aucun utilisateur connecté.");
+        console.log("Aucun admin connecté.");
 
         if (window.location.pathname.includes("admin.html")) {
-            alert("Veuillez vous connecter pour accéder à cette page.");
-            window.location.href = "login.html";
+            alert("Accès refusé.");
+            window.location.href = "index.html";
         }
     }
 });
