@@ -8,8 +8,6 @@ const ADMIN_UID = "1hZUciu6kAdyzdFoQNeLkfXVCFt1";
 
 auth.onAuthStateChanged(function(user) {
 
-    cacherLienAdmin();
-
     if (user) {
 
         if (user.uid === ADMIN_UID) {
@@ -21,8 +19,6 @@ auth.onAuthStateChanged(function(user) {
             if (window.location.pathname.includes("admin.html")) {
                 document.body.classList.add("admin-access-granted");
             }
-
-            afficherLienAdmin();
 
         } else {
 
@@ -44,22 +40,6 @@ auth.onAuthStateChanged(function(user) {
         }
     }
 });
-
-
-function cacherLienAdmin() {
-    var liens = document.querySelectorAll('a[href="admin.html"]');
-    liens.forEach(function(lien) {
-        lien.style.display = "none";
-    });
-}
-
-
-function afficherLienAdmin() {
-    var liens = document.querySelectorAll('a[href="admin.html"]');
-    liens.forEach(function(lien) {
-        lien.style.display = "";
-    });
-}
 
 
 function loginUser(email, password) {
