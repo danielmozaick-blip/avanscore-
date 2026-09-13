@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="obsidian">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0,
+                   maximum-scale=1.0,
+                   user-scalable=no">
+
+    <meta name="description"
+          content="AVANSCORE — Analyses, statistiques, pronostics et informations football.">
+
+    <meta name="theme-color" content="#08090b">
+
+    <title>AVANSCORE — Analysez. Anticipez. Décidez.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+</head>
+
+
+<body>
+
+
+    <!-- ÉCRAN DE LANCEMENT -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-logo">
+            <span class="avan">AVAN</span><span class="score">SCORE</span>
+        </div>
+        <p>Analysez. Anticipez. Décidez.</p>
+    </div>
+
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <aside class="side-menu" id="sideMenu">
+
+        <div class="side-menu-header">
+
+            <a href="index.html" class="brand">
+                <span class="avan">AVAN</span><span class="score">SCORE</span>
+            </a>
+
+            <button class="icon-button" id="closeMenu" type="button" aria-label="Fermer le menu">×</button>
+
+        </div>
+
+
+        <nav class="side-menu-nav">
+
+            <a href="index.html" class="side-menu-link active">🏠 Accueil</a>
+            <a href="predictions.html" class="side-menu-link">🎯 Pronostics</a>
+            <a href="tickets.html" class="side-menu-link">🎟️ Tickets</a>
+            <a href="analyses.html" class="side-menu-link">📊 Analyses</a>
+            <a href="premium.html" class="side-menu-link">⭐ Premium</a>
+            <a href="community.html" class="side-menu-link">💬 Communauté</a>
+            <a href="search.html" class="side-menu-link">🔎 Recherche</a>
+            <a href="history.html" class="side-menu-link">🕓 Historique</a>
+            <div class="side-menu-divider"></div>
+
+            <a href="account.html" class="side-menu-link">👤 Mon compte</a>
+            <a href="settings.html" class="side-menu-link">⚙️ Paramètres</a>
+            <a href="admin.html" class="side-menu-link">🛠️ Admin</a>
+            <div class="side-menu-divider"></div>
+
+            <a href="login.html" class="side-menu-link">🔐 Connexion</a>
+            <a href="register.html" class="side-menu-link">✚ Inscription</a>
+
+            <div class="side-menu-divider"></div>
+
+            <a href="about.html" class="side-menu-link">ℹ️ À propos</a>
+            <a href="faq.html" class="side-menu-link">❓ FAQ</a>
+            <a href="contact.html" class="side-menu-link">📩 Contact</a>
+
+            <div class="side-menu-divider"></div>
+
+            <a href="privacy.html" class="side-menu-link">🔒 Confidentialité</a>
+            <a href="terms.html" class="side-menu-link">📄 Conditions d'utilisation</a>
+            <a href="premium-terms.html" class="side-menu-link">⭐ Conditions Premium</a>
+            <a href="cookies.html" class="side-menu-link">🍪 Cookies</a>
+            <a href="disclaimer.html" class="side-menu-link">⚠️ Avertissement</a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <button class="menu-button" id="openMenu" type="button" aria-label="Ouvrir le menu" aria-controls="sideMenu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <a href="index.html" class="brand">
+                <span class="avan">AVAN</span><span class="score">SCORE</span>
+            </a>
+
+
+            <div class="header-actions">
+
+                <a href="search.html" class="icon-button" aria-label="Rechercher">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                </a>
+
+
+                <a href="login.html" class="header-login">Connexion</a>
+                <a href="register.html" class="header-register">S'inscrire</a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-inner">
+
+                <span class="eyebrow">AVANSCORE</span>
+
+                <h1>
+                    Analysez. Anticipez. Décidez.
+                </h1>
+
+                <p>
+                    AVANSCORE est une plateforme d’analyse et d’information footballistique.
+                    Nous mettons à votre disposition des statistiques, des tendances,
+                    des pronostics et des tickets soigneusement préparés pour vous aider
+                    à mieux comprendre chaque rencontre. Notre objectif est de vous fournir
+                    des informations claires et utiles, tout en vous laissant la liberté totale
+                    de prendre vos propres décisions.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="predictions.html" class="btn btn-primary">
+                        Voir les pronostics
+                    </a>
+
+                    <a href="tickets.html" class="btn btn-secondary">
+                        Voir les tickets
+                    </a>
+
+                    <a href="premium.html" class="btn btn-secondary">
+                        Découvrir Premium
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- POURQUOI AVANSCORE -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Pourquoi choisir AVANSCORE ?</h2>
+
+                        <p>Une approche simple et structurée du football.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card card-padding" style="margin-bottom: 20px;">
+
+                    <p style="color: var(--text-soft); font-size: 15px; line-height: 1.8;">
+                        Dans l’univers du football, l’information est essentielle.
+                        AVANSCORE vous aide à mieux lire les matchs grâce à une approche
+                        simple et structurée. Nous analysons les compétitions, les équipes,
+                        les dynamiques de jeu et les statistiques récentes pour vous offrir
+                        un contenu fiable et pertinent. Notre mission est de vous donner
+                        les clés pour mieux comprendre le football, sans jamais décider
+                        à votre place.
+                    </p>
+
+                    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+
+                        <span style="color: var(--text);">✅ Analyse sérieuse et structurée</span>
+                        <span style="color: var(--text);">✅ Pronostics indicatifs avec cotes</span>
+                        <span style="color: var(--text);">✅ Tickets combinés avec cotes totales</span>
+                        <span style="color: var(--text);">✅ Statistiques et tendances</span>
+                        <span style="color: var(--text);">✅ Liberté totale de décision</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- NOS SERVICES -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Nos services</h2>
+
+                        <p>Ce que nous mettons à votre disposition.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <article class="card card-padding">
+
+                        <h3>Pronostics</h3>
+
+                        <p style="color: var(--text-soft); font-size: 14px; margin-top: 10px;">
+                            Découvrez des matchs analysés avec plusieurs pronostics.
+                            Chaque pronostic est accompagné d’une cote et d’un statut
+                            pour suivre son évolution.
+                        </p>
+
+                    </article>
+
+
+                    <article class="card card-padding">
+
+                        <h3>Tickets</h3>
+
+                        <p style="color: var(--text-soft); font-size: 14px; margin-top: 10px;">
+                            Consultez nos tickets combinés. Chaque ticket regroupe
+                            un ou plusieurs matchs avec des cotes individuelles
+                            et une cote totale calculée automatiquement.
+                        </p>
+
+                    </article>
+
+
+                    <article class="card card-padding">
+
+                        <h3>Analyses</h3>
+
+                        <p style="color: var(--text-soft); font-size: 14px; margin-top: 10px;">
+                            Accédez à des analyses détaillées : statistiques,
+                            tendances, confrontations et dynamique des équipes.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- COMMENT ÇA MARCHE -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Comment fonctionne AVANSCORE ?</h2>
+
+                        <p>Trois étapes simples.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <article class="card card-padding">
+
+                        <span class="badge badge-free">01</span>
+
+                        <h3 style="margin-top: 14px;">Analyse</h3>
+
+                        <p style="color: var(--text-soft); font-size: 14px; margin-top: 10px;">
+                            Consultez les informations, statistiques et tendances
+                            disponibles pour chaque rencontre.
+                        </p>
+
+                    </article>
+
+
+                    <article class="card card-padding">
+
+                        <span class="badge badge-free">02</span>
+
+                        <h3 style="margin-top: 14px;">Pronostic</h3>
+
+                        <p style="color: var(--text-soft); font-size: 14px; margin-top: 10px;">
+                            Découvrez les différents pronostics publiés pour les matchs.
+                        </p>
+
+                    </article>
+
+
+                    <article class="card card-padding">
+
+                        <span class="badge badge-free">03</span>
+
+                        <h3 style="margin-top: 14px;">Décision</h3>
+
+                        <p style="color: var(--text-soft); font-size: 14px; margin-top: 10px;">
+                            Analysez les informations et prenez vos propres décisions
+                            en toute liberté.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PREMIUM -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="premium-section">
+
+                    <span class="badge badge-premium">⭐ PREMIUM</span>
+
+                    <h2 style="margin-top: 13px;">
+                        Passez au niveau supérieur avec Premium
+                    </h2>
+
+                    <p>
+                        Avec l’abonnement Premium, vous accédez à du contenu exclusif :
+                        pronostics VIP, tickets payants, statistiques détaillées et bien plus.
+                        Le Premium vous donne une longueur d’avance dans votre analyse.
+                    </p>
+
+                    <div class="premium-actions">
+
+                        <a href="premium.html" class="btn btn-primary">
+                            Découvrir Premium
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- AVERTISSEMENT -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="disclaimer">
+
+                    <strong>Avertissement</strong>
+
+                    <br><br>
+
+                    Les analyses, pronostics et tickets publiés sur AVANSCORE sont fournis
+                    à titre informatif. AVANSCORE n’est pas un bookmaker. Le site ne reçoit
+                    ni ne place de paris. Aucun résultat n’est garanti. L’utilisateur est
+                    seul responsable de ses décisions.
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER SIMPLIFIÉ -->
+    <footer class="site-footer">
+
+        <div class="container">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px 0;">
+
+    <a href="index.html" class="brand footer-brand" aria-label="AVANSCORE - Accueil">
+        <span class="avan">AVAN</span><span class="score">SCORE</span>
+    </a>
+
+    <p style="color: var(--text-muted); font-size: 12px;">
+        Analysez. Anticipez. Décidez.
+    </p>
+
+</div>
+            <div class="footer-bottom">
+
+                <span>&copy; 2026 AVANSCORE. Tous droits réservés.</span>
+
+                <div class="footer-bottom-links">
+                    <a href="about.html">À propos</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Confidentialité</a>
+                    <a href="terms.html">Conditions</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         SCRIPTS
+         ===================================================== -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="firebase.js"></script>
+    <script src="auth.js"></script>
+    <script src="theme.js"></script>
+
+    <script>
+
+        // =====================================================
+// ÉCRAN DE LANCEMENT UNIQUE
+// =====================================================
+
+window.addEventListener("load", function() {
+
+    var splash = document.getElementById("splashScreen");
+
+    if (!splash) {
+        return;
+    }
+
+    var dejaAffiche = sessionStorage.getItem("splash-affiche");
+
+    if (dejaAffiche) {
+        splash.remove();
+        return;
+    }
+
+    sessionStorage.setItem("splash-affiche", "oui");
+
+    setTimeout(function() {
+        splash.classList.add("hidden");
+
+        setTimeout(function() {
+            splash.remove();
+        }, 500);
+    }, 1200);
+});
+
+
+        // =====================================================
+        // MENU
+        // =====================================================
+
+        var openMenu = document.getElementById("openMenu");
+        var closeMenu = document.getElementById("closeMenu");
+        var menuOverlay = document.getElementById("menuOverlay");
+        var sideMenu = document.getElementById("sideMenu");
+
+        function showMenu() {
+            document.body.classList.add("menu-open");
+            sideMenu.classList.add("active");
+            menuOverlay.classList.add("active");
+            openMenu.setAttribute("aria-expanded", "true");
+        }
+
+        function hideMenu() {
+            document.body.classList.remove("menu-open");
+            sideMenu.classList.remove("active");
+            menuOverlay.classList.remove("active");
+            openMenu.setAttribute("aria-expanded", "false");
+        }
+
+        openMenu.addEventListener("click", showMenu);
+        closeMenu.addEventListener("click", hideMenu);
+        menuOverlay.addEventListener("click", hideMenu);
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                hideMenu();
+            }
+        });
+
+        sideMenu.querySelectorAll("a").forEach(function(link) {
+            link.addEventListener("click", hideMenu);
+        });
+
+
+        // =====================================================
+        // ALERTE EXPIRATION
+        // =====================================================
+
+        function checkExpiration() {
+            var alertContainer = document.createElement("div");
+            alertContainer.id = "expirationAlert";
+            var mainElement = document.querySelector("main");
+            mainElement.prepend(alertContainer);
+
+            auth.onAuthStateChanged(function(user) {
+
+                if (!user) {
+                    return;
+                }
+
+                db.collection("users").doc(user.uid).get()
+                    .then(function(doc) {
+
+                        if (!doc.exists) {
+                            return;
+                        }
+
+                        var data = doc.data();
+
+                        if (!data.premium || !data.expirationDate) {
+                            return;
+                        }
+
+                        var now = new Date();
+                        var expDate = data.expirationDate.toDate();
+                        var daysRemaining = Math.ceil((expDate - now) / (1000 * 60 * 60 * 24));
+
+                        if (daysRemaining <= 5 && daysRemaining > 0) {
+                            alertContainer.innerHTML = `
+                                <div class="alert-box" style="margin-bottom: 20px;">
+                                    ⚠️ Votre abonnement Premium expire dans ${daysRemaining} jours.
+                                </div>
+                            `;
+                        } else if (daysRemaining <= 0) {
+                            alertContainer.innerHTML = `
+                                <div class="alert-box" style="margin-bottom: 20px;">
+                                    ❌ Votre abonnement Premium a expiré.
+                                </div>
+                            `;
+                        }
+                    })
+                    .catch(function(error) {
+                        console.error("Erreur expiration :", error);
+                    });
+            });
+        }
+
+
+        checkExpiration();
+
+    </script>
+
+</body>
+
+</html>

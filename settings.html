@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="obsidian">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0,
+                   maximum-scale=1.0,
+                   user-scalable=no">
+
+    <meta name="description"
+          content="AVANSCORE — Paramètres.">
+
+    <meta name="theme-color" content="#08090b">
+
+    <title>AVANSCORE — Paramètres</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <aside class="side-menu" id="sideMenu">
+
+        <div class="side-menu-header">
+
+            <a href="index.html" class="brand">
+                <span class="avan">AVAN</span><span class="score">SCORE</span>
+            </a>
+
+            <button class="icon-button" id="closeMenu" type="button" aria-label="Fermer le menu">×</button>
+
+        </div>
+
+
+        <nav class="side-menu-nav">
+
+            <a href="index.html" class="side-menu-link">🏠 Accueil</a>
+            <a href="predictions.html" class="side-menu-link">🎯 Pronostics</a>
+            <a href="tickets.html" class="side-menu-link">🎟️ Tickets</a>
+            <a href="analyses.html" class="side-menu-link">📊 Analyses</a>
+            <a href="premium.html" class="side-menu-link">⭐ Premium</a>
+            <a href="community.html" class="side-menu-link">💬 Communauté</a>
+            <a href="search.html" class="side-menu-link">🔎 Recherche</a>
+            <a href="history.html" class="side-menu-link">🕓 Historique</a>
+
+            <div class="side-menu-divider"></div>
+
+            <a href="account.html" class="side-menu-link">👤 Mon compte</a>
+            <a href="settings.html" class="side-menu-link active">⚙️ Paramètres</a>
+            <a href="admin.html" class="side-menu-link">🛠️ Admin</a>
+            <div class="side-menu-divider"></div>
+
+            <a href="login.html" class="side-menu-link">🔐 Connexion</a>
+            <a href="register.html" class="side-menu-link">✚ Inscription</a>
+
+            <div class="side-menu-divider"></div>
+
+            <a href="about.html" class="side-menu-link">ℹ️ À propos</a>
+            <a href="faq.html" class="side-menu-link">❓ FAQ</a>
+            <a href="contact.html" class="side-menu-link">📩 Contact</a>
+
+            <div class="side-menu-divider"></div>
+
+            <a href="privacy.html" class="side-menu-link">🔒 Confidentialité</a>
+            <a href="terms.html" class="side-menu-link">📄 Conditions d'utilisation</a>
+            <a href="premium-terms.html" class="side-menu-link">⭐ Conditions Premium</a>
+            <a href="cookies.html" class="side-menu-link">🍪 Cookies</a>
+            <a href="disclaimer.html" class="side-menu-link">⚠️ Avertissement</a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <button class="menu-button" id="openMenu" type="button" aria-label="Ouvrir le menu" aria-controls="sideMenu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <a href="index.html" class="brand">
+                <span class="avan">AVAN</span><span class="score">SCORE</span>
+            </a>
+
+
+            <div class="header-actions">
+
+                <a href="account.html" class="header-login">Compte</a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="eyebrow">AVANSCORE</span>
+
+                        <h2>Paramètres</h2>
+
+                        <p>Personnalisez votre interface.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div style="max-width: 720px;">
+
+
+                    <div class="card card-padding settings-card">
+
+                        <h3>Thème</h3>
+
+                        <p>Choisissez le mode d'affichage.</p>
+
+                        <div class="theme-options">
+
+                            <button type="button" class="theme-option active" data-theme="obsidian">
+                                <span>🌑</span>
+                                <strong>Obsidian</strong>
+                            </button>
+
+                            <button type="button" class="theme-option" data-theme="nuit">
+                                <span>🌙</span>
+                                <strong>Nuit</strong>
+                            </button>
+
+                            <button type="button" class="theme-option" data-theme="bleu-nuit">
+                                <span>🔵</span>
+                                <strong>Bleu Nuit</strong>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card card-padding settings-card">
+
+                        <h3>Compte</h3>
+
+                        <p>Informations de votre compte.</p>
+
+                        <div id="accountInfo"></div>
+
+                    </div>
+
+
+                    <div class="card card-padding settings-card">
+
+                        <h3>Aide</h3>
+
+                        <p>Besoin d'aide ?</p>
+
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+
+                            <a href="faq.html" class="btn btn-secondary">FAQ</a>
+
+                            <a href="contact.html" class="btn btn-secondary">Contact</a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card card-padding settings-card">
+
+                        <h3>À propos</h3>
+
+                        <p>AVANSCORE — Analysez. Anticipez. Décidez.</p>
+
+                    </div>
+
+
+                    <button id="saveSettings" class="btn btn-primary">
+                        Enregistrer les préférences
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px 0;">
+
+                <a href="index.html" class="brand footer-brand" aria-label="AVANSCORE - Accueil">
+                    <span class="avan">AVAN</span><span class="score">SCORE</span>
+                </a>
+
+                <p style="color: var(--text-muted); font-size: 12px;">
+                    Analysez. Anticipez. Décidez.
+                </p>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>&copy; 2026 AVANSCORE. Tous droits réservés.</span>
+
+                <div class="footer-bottom-links">
+                    <a href="about.html">À propos</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Confidentialité</a>
+                    <a href="terms.html">Conditions</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="firebase.js"></script>
+    <script src="auth.js"></script>
+    <script src="theme.js"></script>
+
+    <script>
+
+        var openMenu = document.getElementById("openMenu");
+        var closeMenu = document.getElementById("closeMenu");
+        var menuOverlay = document.getElementById("menuOverlay");
+        var sideMenu = document.getElementById("sideMenu");
+
+        function showMenu() {
+            document.body.classList.add("menu-open");
+            sideMenu.classList.add("active");
+            menuOverlay.classList.add("active");
+            openMenu.setAttribute("aria-expanded", "true");
+        }
+
+        function hideMenu() {
+            document.body.classList.remove("menu-open");
+            sideMenu.classList.remove("active");
+            menuOverlay.classList.remove("active");
+            openMenu.setAttribute("aria-expanded", "false");
+        }
+
+        openMenu.addEventListener("click", showMenu);
+        closeMenu.addEventListener("click", hideMenu);
+        menuOverlay.addEventListener("click", hideMenu);
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                hideMenu();
+            }
+        });
+
+        sideMenu.querySelectorAll("a").forEach(function(link) {
+            link.addEventListener("click", hideMenu);
+        });
+
+
+        function loadPreferences() {
+            var savedTheme = localStorage.getItem("avanscore-theme") || "obsidian";
+
+            document.querySelectorAll(".theme-option").forEach(function(button) {
+                if (button.getAttribute("data-theme") === savedTheme) {
+                    button.classList.add("active");
+                } else {
+                    button.classList.remove("active");
+                }
+            });
+        }
+
+
+        function loadAccountInfo() {
+            var container = document.getElementById("accountInfo");
+
+            auth.onAuthStateChanged(function(user) {
+
+                if (!user) {
+                    container.innerHTML = `
+                        <p style="color: var(--text-muted); font-size: 14px;">
+                            Non connecté.
+                        </p>
+                    `;
+                    return;
+                }
+
+                db.collection("users").doc(user.uid).get()
+                    .then(function(doc) {
+
+                        if (!doc.exists) {
+                            container.innerHTML = `
+                                <p style="color: var(--text-muted); font-size: 14px;">
+                                    ${user.email}
+                                </p>
+                            `;
+                            return;
+                        }
+
+                        var data = doc.data();
+
+                        container.innerHTML = `
+                            <p style="color: var(--text-soft); font-size: 14px;">
+                                Email : ${user.email}
+                            </p>
+
+                            <p style="color: var(--text-soft); font-size: 14px; margin-top: 6px;">
+                                Statut : ${data.premium ? '⭐ Premium' : 'Gratuit'}
+                            </p>
+
+                            <button id="logoutButton" class="btn btn-secondary" style="margin-top: 14px;">
+                                🚪 Déconnexion
+                            </button>
+                        `;
+
+                        document.getElementById("logoutButton").addEventListener("click", function() {
+                            logoutUser()
+                                .then(function() {
+                                    window.location.href = "index.html";
+                                })
+                                .catch(function(error) {
+                                    alert("Erreur : " + error.message);
+                                });
+                        });
+                    })
+                    .catch(function(error) {
+                        console.error("Erreur :", error);
+                    });
+            });
+        }
+
+
+        document.querySelectorAll(".theme-option").forEach(function(button) {
+            button.addEventListener("click", function() {
+
+                document.querySelectorAll(".theme-option").forEach(function(btn) {
+                    btn.classList.remove("active");
+                });
+
+                button.classList.add("active");
+
+                applyTheme(button.getAttribute("data-theme"));
+            });
+        });
+
+
+        document.getElementById("saveSettings").addEventListener("click", function() {
+
+            var theme = document.querySelector(".theme-option.active").getAttribute("data-theme");
+
+            localStorage.setItem("avanscore-theme", theme);
+
+            applyTheme(theme);
+
+            var user = auth.currentUser;
+
+            if (user) {
+                db.collection("users").doc(user.uid).update({
+                    theme: theme
+                })
+                .then(function() {
+                    alert("Préférences enregistrées.");
+                })
+                .catch(function(error) {
+                    alert("Erreur : " + error.message);
+                });
+            } else {
+                alert("Préférences enregistrées localement.");
+            }
+        });
+
+
+        loadPreferences();
+        loadAccountInfo();
+
+    </script>
+
+</body>
+
+</html>

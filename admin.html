@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="obsidian">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0,
+                   maximum-scale=1.0,
+                   user-scalable=no">
+
+    <meta name="description"
+          content="AVANSCORE — Espace Administrateur.">
+
+    <meta name="theme-color" content="#08090b">
+
+    <title>AVANSCORE — Administration</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <aside class="side-menu" id="sideMenu">
+
+        <div class="side-menu-header">
+
+            <a href="index.html" class="brand">
+                <span class="avan">AVAN</span><span class="score">SCORE</span>
+            </a>
+
+            <button class="icon-button" id="closeMenu" type="button" aria-label="Fermer le menu">×</button>
+
+        </div>
+
+
+        <nav class="side-menu-nav">
+
+            <a href="index.html" class="side-menu-link">🏠 Accueil</a>
+            <a href="predictions.html" class="side-menu-link">🎯 Pronostics</a>
+            <a href="tickets.html" class="side-menu-link">🎟️ Tickets</a>
+            <a href="analyses.html" class="side-menu-link">📊 Analyses</a>
+            <a href="premium.html" class="side-menu-link">⭐ Premium</a>
+            <a href="community.html" class="side-menu-link">💬 Communauté</a>
+            <a href="search.html" class="side-menu-link">🔎 Recherche</a>
+            <a href="history.html" class="side-menu-link">🕓 Historique</a>
+            <div class="side-menu-divider"></div>
+
+            <a href="account.html" class="side-menu-link">👤 Mon compte</a>
+            <a href="settings.html" class="side-menu-link">⚙️ Paramètres</a>
+
+            <div class="side-menu-divider"></div>
+
+            <a href="login.html" class="side-menu-link">🔐 Connexion</a>
+            <a href="register.html" class="side-menu-link">✚ Inscription</a>
+
+            <div class="side-menu-divider"></div>
+
+            <a href="about.html" class="side-menu-link">ℹ️ À propos</a>
+            <a href="faq.html" class="side-menu-link">❓ FAQ</a>
+            <a href="contact.html" class="side-menu-link">📩 Contact</a>
+
+            <div class="side-menu-divider"></div>
+
+            <a href="privacy.html" class="side-menu-link">🔒 Confidentialité</a>
+            <a href="terms.html" class="side-menu-link">📄 Conditions d'utilisation</a>
+            <a href="premium-terms.html" class="side-menu-link">⭐ Conditions Premium</a>
+            <a href="cookies.html" class="side-menu-link">🍪 Cookies</a>
+            <a href="disclaimer.html" class="side-menu-link">⚠️ Avertissement</a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <button class="menu-button" id="openMenu" type="button" aria-label="Ouvrir le menu" aria-controls="sideMenu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <a href="index.html" class="brand">
+                <span class="avan">AVAN</span><span class="score">SCORE</span>
+            </a>
+
+
+            <div class="header-actions">
+
+                <a href="account.html" class="header-login">Admin</a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="eyebrow">Espace réservé</span>
+
+                        <h2>Administration</h2>
+
+                        <p>Gérez les matchs, pronostics, tickets, analyses et utilisateurs.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid" style="margin-bottom: 30px;">
+
+                    <article class="card card-padding">
+
+                        <h3 id="totalMatchs">0</h3>
+
+                        <p style="color: var(--text-muted); font-size: 14px;">
+                            Matchs ajoutés
+                        </p>
+
+                    </article>
+
+
+                    <article class="card card-padding">
+
+                        <h3 id="totalTickets">0</h3>
+
+                        <p style="color: var(--text-muted); font-size: 14px;">
+                            Tickets créés
+                        </p>
+
+                    </article>
+
+
+                    <article class="card card-padding">
+
+                        <h3 id="totalUsers">0</h3>
+
+                        <p style="color: var(--text-muted); font-size: 14px;">
+                            Utilisateurs inscrits
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Ajouter un match</h2>
+
+                        <p>Ajoutez autant de pronostics que vous voulez.</p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="matchForm" class="admin-form">
+
+                    <div class="form-group">
+
+                        <label for="matchName">Match</label>
+
+                        <input type="text" id="matchName" placeholder="Ex. Real Madrid vs Getafe" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="competition">Compétition</label>
+
+                        <input type="text" id="competition" placeholder="Ex. La Liga" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="matchTime">Heure</label>
+
+                        <input type="text" id="matchTime" placeholder="Ex. 21h00" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="stadium">Stade</label>
+
+                        <input type="text" id="stadium" placeholder="Ex. Santiago Bernabéu" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="matchType">Type</label>
+
+                        <select id="matchType" required>
+                            <option value="gratuit">Gratuit</option>
+                            <option value="payant">Payant</option>
+                        </select>
+
+                    </div>
+
+
+                    <div id="pronosticsContainer">
+
+                        <div class="pronostic-row">
+
+                            <div class="form-group">
+                                <label>Pronostic</label>
+                                <input type="text" class="pronostic-input" placeholder="Ex. Real Madrid gagne" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Cote</label>
+                                <input type="text" class="cote-input" placeholder="Ex. 2.14" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Statut</label>
+                                <select class="statut-pronostic" required>
+                                    <option value="En attente">En attente</option>
+                                    <option value="Gagné">Gagné</option>
+                                    <option value="Perdu">Perdu</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="button" id="addPronostic" class="btn btn-secondary">
+                        + Ajouter un pronostic
+                    </button>
+
+
+                    <button type="submit" class="btn btn-primary">
+                        Ajouter le match
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Créer un ticket</h2>
+
+                    <p>Ajoutez autant de matchs que vous voulez.</p>
+
+                </div>
+
+            </div>
+
+
+            <form id="ticketForm" class="admin-form">
+
+                <div class="form-group">
+
+                    <label for="ticketName">Nom du ticket</label>
+
+                    <input type="text" id="ticketName" placeholder="Ex. PLUS SÛR" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="ticketConfidence">Confiance</label>
+
+                    <input type="text" id="ticketConfidence" placeholder="Ex. 95%" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="ticketType">Type</label>
+
+                    <select id="ticketType" required>
+                        <option value="gratuit">Gratuit</option>
+                        <option value="payant">Payant</option>
+                    </select>
+
+                </div>
+
+
+                <div id="ticketMatchesContainer">
+
+                    <div class="ticket-match-row">
+
+                        <div class="form-group">
+                            <label>Match</label>
+                            <input type="text" class="ticket-match-input" placeholder="Ex. Real Madrid vs Getafe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Pronostic</label>
+                            <input type="text" class="ticket-pronostic-input" placeholder="Ex. Real gagne" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Cote</label>
+                            <input type="text" class="ticket-cote-input" placeholder="Ex. 1.45" required>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button type="button" id="addTicketMatch" class="btn btn-secondary">
+                    + Ajouter un match
+                </button>
+
+
+                <div class="form-group">
+
+                    <label for="ticketTotalCote">Total (calculé automatiquement)</label>
+
+                    <input type="text" id="ticketTotalCote" readonly>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="ticketStatus">Statut</label>
+
+                    <select id="ticketStatus" required>
+                        <option value="En attente">En attente</option>
+                        <option value="Gagné">Gagné</option>
+                        <option value="Perdu">Perdu</option>
+                    </select>
+
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">
+                    Créer le ticket
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Ajouter une analyse</h2>
+
+                    <p>Publiez une analyse de match.</p>
+
+                </div>
+
+            </div>
+
+
+            <form id="analyseForm" class="admin-form">
+
+                <div class="form-group">
+
+                    <label for="analyseMatch">Match</label>
+
+                    <input type="text" id="analyseMatch" placeholder="Ex. Real Madrid vs Getafe" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="analyseTexte">Analyse</label>
+
+                    <textarea id="analyseTexte" placeholder="Écrivez votre analyse..." required></textarea>
+
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">
+                    Ajouter l'analyse
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Gestion des matchs</h2>
+
+                    <p>Modifiez ou supprimez les matchs.</p>
+
+                </div>
+
+            </div>
+
+
+            <div id="matchesList"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Gestion des tickets</h2>
+
+                    <p>Modifiez le statut ou supprimez les tickets.</p>
+
+                </div>
+
+            </div>
+
+
+            <div id="ticketsList"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Gestion des analyses</h2>
+
+                    <p>Modifiez ou supprimez les analyses.</p>
+
+                </div>
+
+            </div>
+
+
+            <div id="analysesList"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Gestion des utilisateurs</h2>
+
+                    <p>Consultez et supprimez les utilisateurs.</p>
+
+                </div>
+
+            </div>
+
+
+            <div id="usersList"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Gestion des commentaires</h2>
+
+                    <p>Consultez et supprimez les commentaires.</p>
+
+                </div>
+
+            </div>
+
+
+            <div id="commentsList"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Historique</h2>
+
+                    <p>Supprimez les anciens pronostics et tickets.</p>
+
+                </div>
+
+            </div>
+
+
+            <button id="clearHistory" class="btn btn-secondary">
+                Supprimer tout l'historique
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <div class="container">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px 0;">
+
+    <a href="index.html" class="brand footer-brand" aria-label="AVANSCORE - Accueil">
+        <span class="avan">AVAN</span><span class="score">SCORE</span>
+    </a>
+
+    <p style="color: var(--text-muted); font-size: 12px;">
+        Analysez. Anticipez. Décidez.
+    </p>
+
+</div>
+        <div class="footer-bottom">
+
+            <span>&copy; 2026 AVANSCORE. Tous droits réservés.</span>
+
+            <div class="footer-bottom-links">
+                <a href="about.html">À propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Confidentialité</a>
+                <a href="terms.html">Conditions</a>
+                <a href="cookies.html">Cookies</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     SCRIPTS
+     ===================================================== -->
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+<script src="firebase.js"></script>
+<script src="auth.js"></script>
+<script src="theme.js"></script>
+
+<script>
+
+    // =====================================================
+    // MENU
+    // =====================================================
+
+    var openMenu = document.getElementById("openMenu");
+    var closeMenu = document.getElementById("closeMenu");
+    var menuOverlay = document.getElementById("menuOverlay");
+    var sideMenu = document.getElementById("sideMenu");
+
+    function showMenu() {
+        document.body.classList.add("menu-open");
+        sideMenu.classList.add("active");
+        menuOverlay.classList.add("active");
+        openMenu.setAttribute("aria-expanded", "true");
+    }
+
+    function hideMenu() {
+        document.body.classList.remove("menu-open");
+        sideMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+        openMenu.setAttribute("aria-expanded", "false");
+    }
+
+    openMenu.addEventListener("click", showMenu);
+    closeMenu.addEventListener("click", hideMenu);
+    menuOverlay.addEventListener("click", hideMenu);
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            hideMenu();
+        }
+    });
+
+    sideMenu.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", hideMenu);
+    });
+
+
+    // =====================================================
+    // PRONOSTICS DYNAMIQUES
+    // =====================================================
+
+    var pronosticCount = 1;
+
+    document.getElementById("addPronostic").addEventListener("click", function() {
+        pronosticCount++;
+
+        var container = document.getElementById("pronosticsContainer");
+
+        var row = document.createElement("div");
+        row.className = "pronostic-row";
+
+        row.innerHTML = `
+            <div class="form-group">
+                <label>Pronostic</label>
+                <input type="text" class="pronostic-input" placeholder="Ex. +2.5 buts" required>
+            </div>
+
+            <div class="form-group">
+                <label>Cote</label>
+                <input type="text" class="cote-input" placeholder="Ex. 1.80" required>
+            </div>
+
+            <div class="form-group">
+                <label>Statut</label>
+                <select class="statut-pronostic" required>
+                    <option value="En attente">En attente</option>
+                    <option value="Gagné">Gagné</option>
+                    <option value="Perdu">Perdu</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn btn-secondary remove-pronostic">Supprimer</button>
+        `;
+
+        container.appendChild(row);
+
+        row.querySelector(".remove-pronostic").addEventListener("click", function() {
+            row.remove();
+        });
+    });
+
+
+    // =====================================================
+    // TICKETS DYNAMIQUES
+    // =====================================================
+
+    var ticketMatchCount = 1;
+
+    document.getElementById("addTicketMatch").addEventListener("click", function() {
+        ticketMatchCount++;
+
+        var container = document.getElementById("ticketMatchesContainer");
+
+        var row = document.createElement("div");
+        row.className = "ticket-match-row";
+
+        row.innerHTML = `
+            <div class="form-group">
+                <label>Match</label>
+                <input type="text" class="ticket-match-input" placeholder="Ex. Barcelone vs Séville" required>
+            </div>
+
+            <div class="form-group">
+                <label>Pronostic</label>
+                <input type="text" class="ticket-pronostic-input" placeholder="Ex. +3.5 buts" required>
+            </div>
+
+            <div class="form-group">
+                <label>Cote</label>
+                <input type="text" class="ticket-cote-input" placeholder="Ex. 1.90" required>
+            </div>
+
+            <button type="button" class="btn btn-secondary remove-ticket-match">Supprimer</button>
+        `;
+
+        container.appendChild(row);
+
+        row.querySelector(".remove-ticket-match").addEventListener("click", function() {
+            row.remove();
+            calculerTotalTicket();
+        });
+
+        row.querySelector(".ticket-cote-input").addEventListener("input", calculerTotalTicket);
+    });
+
+
+    document.querySelector(".ticket-cote-input").addEventListener("input", calculerTotalTicket);
+
+
+    function calculerTotalTicket() {
+        var cotes = document.querySelectorAll(".ticket-cote-input");
+        var total = 1;
+
+        cotes.forEach(function(input) {
+            var valeur = parseFloat(input.value);
+
+            if (valeur && valeur > 0) {
+                total = total * valeur;
+            }
+        });
+
+        if (total > 1) {
+            document.getElementById("ticketTotalCote").value = total.toFixed(2);
+        } else {
+            document.getElementById("ticketTotalCote").value = "";
+        }
+    }
+
+
+    // =====================================================
+    // AJOUTER UN MATCH
+    // =====================================================
+
+    document.getElementById("matchForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var matchName = document.getElementById("matchName").value;
+        var competition = document.getElementById("competition").value;
+        var matchTime = document.getElementById("matchTime").value;
+        var stadium = document.getElementById("stadium").value;
+        var matchType = document.getElementById("matchType").value;
+
+        var pronostics = [];
+        var rows = document.querySelectorAll(".pronostic-row");
+
+        rows.forEach(function(row) {
+            var pronostic = row.querySelector(".pronostic-input").value;
+            var cote = row.querySelector(".cote-input").value;
+            var statut = row.querySelector(".statut-pronostic").value;
+
+            if (pronostic && cote && statut) {
+                pronostics.push({
+                    pronostic: pronostic,
+                    cote: cote,
+                    statut: statut,
+                    likes: 0,
+                    likedBy: []
+                });
+            }
+        });
+
+        db.collection("matches").add({
+            match: matchName,
+            competition: competition,
+            heure: matchTime,
+            stade: stadium,
+            type: matchType,
+            pronostics: pronostics,
+            statut: "En attente",
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then(function() {
+            alert("Match ajouté avec succès.");
+            document.getElementById("matchForm").reset();
+            loadAll();
+        })
+        .catch(function(error) {
+            alert("Erreur : " + error.message);
+        });
+    });
+
+
+    // =====================================================
+    // CRÉER UN TICKET
+    // =====================================================
+
+    document.getElementById("ticketForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var ticketName = document.getElementById("ticketName").value;
+        var ticketConfidence = document.getElementById("ticketConfidence").value;
+        var ticketType = document.getElementById("ticketType").value;
+        var ticketTotalCote = document.getElementById("ticketTotalCote").value;
+        var ticketStatus = document.getElementById("ticketStatus").value;
+
+        var matchs = [];
+        var rows = document.querySelectorAll(".ticket-match-row");
+
+        rows.forEach(function(row) {
+            var match = row.querySelector(".ticket-match-input").value;
+            var pronostic = row.querySelector(".ticket-pronostic-input").value;
+            var cote = row.querySelector(".ticket-cote-input").value;
+
+            if (match && pronostic && cote) {
+                matchs.push({
+                    match: match,
+                    pronostic: pronostic,
+                    cote: cote,
+                    statut: "En attente",
+                    likes: 0,
+                    likedBy: []
+                });
+            }
+        });
+
+        db.collection("tickets").add({
+            nom: ticketName,
+            confiance: ticketConfidence,
+            type: ticketType,
+            matchs: matchs,
+            coteTotale: ticketTotalCote,
+            statut: ticketStatus,
+            likes: 0,
+            likedBy: [],
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then(function() {
+            alert("Ticket créé avec succès.");
+            document.getElementById("ticketForm").reset();
+            loadAll();
+        })
+        .catch(function(error) {
+            alert("Erreur : " + error.message);
+        });
+    });
+
+
+    // =====================================================
+    // AJOUTER UNE ANALYSE
+    // =====================================================
+
+    document.getElementById("analyseForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var analyseMatch = document.getElementById("analyseMatch").value;
+        var analyseTexte = document.getElementById("analyseTexte").value;
+
+        db.collection("analyses").add({
+            match: analyseMatch,
+            texte: analyseTexte,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then(function() {
+            alert("Analyse ajoutée avec succès.");
+            document.getElementById("analyseForm").reset();
+            loadAll();
+        })
+        .catch(function(error) {
+            alert("Erreur : " + error.message);
+        });
+    });
+
+
+// =====================================================
+// CHARGER LES TOTAUX
+// =====================================================
+
+function loadTotals() {
+    db.collection("matches").get().then(function(snapshot) {
+        document.getElementById("totalMatchs").textContent = snapshot.size;
+    });
+
+    db.collection("tickets").get().then(function(snapshot) {
+        document.getElementById("totalTickets").textContent = snapshot.size;
+    });
+
+    db.collection("users").get().then(function(snapshot) {
+        document.getElementById("totalUsers").textContent = snapshot.size;
+    });
+}
+
+
+// =====================================================
+// CHARGER LES MATCHS
+// =====================================================
+
+function loadMatches() {
+    var container = document.getElementById("matchesList");
+
+    db.collection("matches")
+        .orderBy("createdAt", "desc")
+        .get()
+        .then(function(querySnapshot) {
+
+            if (querySnapshot.empty) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>Aucun match ajouté</h3>
+                        <p>Les matchs apparaîtront ici.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            var html = "";
+
+            querySnapshot.forEach(function(doc) {
+                var data = doc.data();
+                var matchId = doc.id;
+
+                var pronosticsHtml = "";
+
+                data.pronostics.forEach(function(prono, index) {
+                    pronosticsHtml += `
+                        <div class="admin-pronostic-item">
+                            <span>${prono.pronostic} ➡️ ${prono.cote}</span>
+
+                            <select class="change-pronostic-statut" data-match-id="${matchId}" data-pronostic-index="${index}">
+                                <option value="En attente" ${prono.statut === "En attente" ? "selected" : ""}>En attente</option>
+                                <option value="Gagné" ${prono.statut === "Gagné" ? "selected" : ""}>Gagné</option>
+                                <option value="Perdu" ${prono.statut === "Perdu" ? "selected" : ""}>Perdu</option>
+                            </select>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="card card-padding" style="margin-bottom: 16px;">
+
+                        <h3>${data.match}</h3>
+
+                        <p style="color: var(--text-muted); font-size: 14px; margin-top: 6px;">
+                            ${data.competition} — ${data.heure}
+                        </p>
+
+                        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 12px;">
+                            Stade : ${data.stade} — Type : ${data.type}
+                        </p>
+
+                        ${pronosticsHtml}
+
+                        <button class="btn btn-secondary delete-match" data-match-id="${matchId}" style="margin-top: 12px;">
+                            Supprimer le match
+                        </button>
+
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+
+            attachMatchEvents();
+        })
+        .catch(function(error) {
+            console.error("Erreur chargement matchs :", error);
+        });
+}
+
+
+// =====================================================
+// CHARGER LES TICKETS
+// =====================================================
+
+function loadTickets() {
+    var container = document.getElementById("ticketsList");
+
+    db.collection("tickets")
+        .orderBy("createdAt", "desc")
+        .get()
+        .then(function(querySnapshot) {
+
+            if (querySnapshot.empty) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>Aucun ticket créé</h3>
+                        <p>Les tickets apparaîtront ici.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            var html = "";
+
+            querySnapshot.forEach(function(doc) {
+                var data = doc.data();
+                var ticketId = doc.id;
+
+                var matchsHtml = "";
+
+                data.matchs.forEach(function(item) {
+                    matchsHtml += `
+                        <div class="ticket-match-line">
+                            <span class="ticket-match-name">${item.match}</span>
+                            <span class="ticket-prono">${item.pronostic}</span>
+                            <span class="ticket-cote">➡️ ${item.cote}</span>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="card card-padding" style="margin-bottom: 16px;">
+
+                        <div class="ticket-header">
+                            <div class="ticket-name">${data.nom}</div>
+                            <span class="badge ${data.type === 'payant' ? 'badge-premium' : 'badge-free'}">${data.type}</span>
+                        </div>
+
+                        ${matchsHtml}
+
+                        <div class="ticket-separator"></div>
+
+                        <div class="ticket-footer">
+                            <span class="ticket-total-cote">Total = ${data.coteTotale}</span>
+                            <span class="ticket-statut">${data.statut}</span>
+                        </div>
+
+                        <select class="change-ticket-statut" data-ticket-id="${ticketId}" style="margin-top: 12px; min-height: 40px; padding: 0 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-2); color: var(--text);">
+                            <option value="En attente" ${data.statut === "En attente" ? "selected" : ""}>En attente</option>
+                            <option value="Gagné" ${data.statut === "Gagné" ? "selected" : ""}>Gagné</option>
+                            <option value="Perdu" ${data.statut === "Perdu" ? "selected" : ""}>Perdu</option>
+                        </select>
+
+                        <button class="btn btn-secondary delete-ticket" data-ticket-id="${ticketId}" style="margin-top: 12px;">
+                            Supprimer le ticket
+                        </button>
+
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+
+            attachTicketEvents();
+        })
+        .catch(function(error) {
+            console.error("Erreur chargement tickets :", error);
+        });
+}
+
+
+// =====================================================
+// CHARGER LES ANALYSES
+// =====================================================
+
+function loadAnalyses() {
+    var container = document.getElementById("analysesList");
+
+    db.collection("analyses")
+        .orderBy("createdAt", "desc")
+        .get()
+        .then(function(querySnapshot) {
+
+            if (querySnapshot.empty) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>Aucune analyse</h3>
+                        <p>Les analyses apparaîtront ici.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            var html = "";
+
+            querySnapshot.forEach(function(doc) {
+                var data = doc.data();
+
+                html += `
+                    <div class="card card-padding" style="margin-bottom: 14px;">
+
+                        <h3>${data.match}</h3>
+
+                        <p style="color: var(--text-soft); font-size: 14px; margin-top: 6px;">
+                            ${data.texte}
+                        </p>
+
+                        <button class="btn btn-secondary delete-analyse" data-analyse-id="${doc.id}" style="margin-top: 10px;">
+                            Supprimer
+                        </button>
+
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+
+            attachAnalyseEvents();
+        })
+        .catch(function(error) {
+            console.error("Erreur chargement analyses :", error);
+        });
+}
+
+
+// =====================================================
+// CHARGER LES UTILISATEURS
+// =====================================================
+
+function loadUsers() {
+    var container = document.getElementById("usersList");
+
+    db.collection("users")
+        .get()
+        .then(function(querySnapshot) {
+
+            if (querySnapshot.empty) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>Aucun utilisateur</h3>
+                        <p>Les utilisateurs apparaîtront ici.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            var html = "";
+
+            querySnapshot.forEach(function(doc) {
+                var data = doc.data();
+
+                html += `
+                    <div class="card card-padding" style="margin-bottom: 14px;">
+
+                        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+
+                            <div>
+                                <h3>${data.email}</h3>
+                                <p style="color: var(--text-muted); font-size: 14px; margin-top: 6px;">
+                                    ${data.premium ? '⭐ Premium' : 'Gratuit'}
+                                </p>
+                            </div>
+
+                            <button class="btn btn-secondary delete-user" data-user-id="${doc.id}">
+                                Supprimer
+                            </button>
+
+                        </div>
+
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+
+            attachUserEvents();
+        })
+        .catch(function(error) {
+            console.error("Erreur chargement utilisateurs :", error);
+        });
+}
+
+
+// =====================================================
+// CHARGER LES COMMENTAIRES
+// =====================================================
+
+function loadComments() {
+    var container = document.getElementById("commentsList");
+
+    db.collection("comments")
+        .orderBy("createdAt", "desc")
+        .get()
+        .then(function(querySnapshot) {
+
+            if (querySnapshot.empty) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>Aucun commentaire</h3>
+                        <p>Les commentaires apparaîtront ici.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            var html = "";
+
+            querySnapshot.forEach(function(doc) {
+                var data = doc.data();
+
+                html += `
+                    <div class="card card-padding" style="margin-bottom: 14px;">
+
+                        <strong>${data.email}</strong>
+
+                        <p style="color: var(--text-soft); font-size: 14px; margin-top: 6px;">
+                            ${data.message}
+                        </p>
+
+                        <button class="btn btn-secondary delete-comment" data-comment-id="${doc.id}" style="margin-top: 10px;">
+                            Supprimer
+                        </button>
+
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+
+            attachCommentEvents();
+        })
+        .catch(function(error) {
+            console.error("Erreur chargement commentaires :", error);
+        });
+}
+
+
+        // =====================================================
+        // ÉVÉNEMENTS
+        // =====================================================
+
+        function attachMatchEvents() {
+
+            document.querySelectorAll(".change-pronostic-statut").forEach(function(select) {
+                select.addEventListener("change", function() {
+                    var matchId = this.getAttribute("data-match-id");
+                    var pronosticIndex = this.getAttribute("data-pronostic-index");
+                    var newStatut = this.value;
+
+                    db.collection("matches").doc(matchId).get()
+                        .then(function(doc) {
+                            if (doc.exists) {
+                                var data = doc.data();
+                                var pronostics = data.pronostics;
+                                pronostics[pronosticIndex].statut = newStatut;
+
+                                return db.collection("matches").doc(matchId).update({
+                                    pronostics: pronostics
+                                });
+                            }
+                        })
+                        .then(function() {
+                            alert("Statut du pronostic mis à jour.");
+                        })
+                        .catch(function(error) {
+                            alert("Erreur : " + error.message);
+                        });
+                });
+            });
+
+
+            document.querySelectorAll(".delete-match").forEach(function(button) {
+                button.addEventListener("click", function() {
+                    var matchId = this.getAttribute("data-match-id");
+
+                    if (confirm("Voulez-vous vraiment supprimer ce match ?")) {
+                        db.collection("matches").doc(matchId).delete()
+                            .then(function() {
+                                alert("Match supprimé.");
+                                loadAll();
+                            })
+                            .catch(function(error) {
+                                alert("Erreur : " + error.message);
+                            });
+                    }
+                });
+            });
+        }
+
+
+        function attachTicketEvents() {
+
+            document.querySelectorAll(".change-ticket-statut").forEach(function(select) {
+                select.addEventListener("change", function() {
+                    var ticketId = this.getAttribute("data-ticket-id");
+                    var newStatut = this.value;
+
+                    db.collection("tickets").doc(ticketId).update({
+                        statut: newStatut
+                    })
+                    .then(function() {
+                        alert("Statut du ticket mis à jour.");
+                    })
+                    .catch(function(error) {
+                        alert("Erreur : " + error.message);
+                    });
+                });
+            });
+
+
+            document.querySelectorAll(".delete-ticket").forEach(function(button) {
+                button.addEventListener("click", function() {
+                    var ticketId = this.getAttribute("data-ticket-id");
+
+                    if (confirm("Voulez-vous vraiment supprimer ce ticket ?")) {
+                        db.collection("tickets").doc(ticketId).delete()
+                            .then(function() {
+                                alert("Ticket supprimé.");
+                                loadAll();
+                            })
+                            .catch(function(error) {
+                                alert("Erreur : " + error.message);
+                            });
+                    }
+                });
+            });
+        }
+
+
+        function attachAnalyseEvents() {
+            document.querySelectorAll(".delete-analyse").forEach(function(button) {
+                button.addEventListener("click", function() {
+                    var analyseId = this.getAttribute("data-analyse-id");
+
+                    if (confirm("Voulez-vous vraiment supprimer cette analyse ?")) {
+                        db.collection("analyses").doc(analyseId).delete()
+                            .then(function() {
+                                alert("Analyse supprimée.");
+                                loadAll();
+                            })
+                            .catch(function(error) {
+                                alert("Erreur : " + error.message);
+                            });
+                    }
+                });
+            });
+        }
+
+
+        function attachUserEvents() {
+            document.querySelectorAll(".delete-user").forEach(function(button) {
+                button.addEventListener("click", function() {
+                    var userId = this.getAttribute("data-user-id");
+
+                    if (confirm("Voulez-vous vraiment supprimer cet utilisateur ?")) {
+                        db.collection("users").doc(userId).delete()
+                            .then(function() {
+                                alert("Utilisateur supprimé.");
+                                loadAll();
+                            })
+                            .catch(function(error) {
+                                alert("Erreur : " + error.message);
+                            });
+                    }
+                });
+            });
+        }
+
+
+        function attachCommentEvents() {
+            document.querySelectorAll(".delete-comment").forEach(function(button) {
+                button.addEventListener("click", function() {
+                    var commentId = this.getAttribute("data-comment-id");
+
+                    if (confirm("Voulez-vous vraiment supprimer ce commentaire ?")) {
+                        db.collection("comments").doc(commentId).delete()
+                            .then(function() {
+                                alert("Commentaire supprimé.");
+                                loadAll();
+                            })
+                            .catch(function(error) {
+                                alert("Erreur : " + error.message);
+                            });
+                    }
+                });
+            });
+        }
+
+
+        // =====================================================
+        // SUPPRIMER TOUT L'HISTORIQUE
+        // =====================================================
+
+        document.getElementById("clearHistory").addEventListener("click", function() {
+
+            if (!confirm("Voulez-vous vraiment supprimer tout l'historique ?")) {
+                return;
+            }
+
+            db.collection("matches").get().then(function(snapshot) {
+                snapshot.forEach(function(doc) {
+                    db.collection("matches").doc(doc.id).delete();
+                });
+            });
+
+            db.collection("tickets").get().then(function(snapshot) {
+                snapshot.forEach(function(doc) {
+                    db.collection("tickets").doc(doc.id).delete();
+                });
+            });
+
+            db.collection("analyses").get().then(function(snapshot) {
+                snapshot.forEach(function(doc) {
+                    db.collection("analyses").doc(doc.id).delete();
+                });
+            });
+
+            alert("Historique supprimé.");
+            loadAll();
+        });
+
+
+        // =====================================================
+        // CHARGER TOUT
+        // =====================================================
+
+        function loadAll() {
+            loadTotals();
+            loadMatches();
+            loadTickets();
+            loadAnalyses();
+            loadUsers();
+            loadComments();
+        }
+
+
+        loadAll();
+
+    </script>
+
+</body>
+
+</html>
